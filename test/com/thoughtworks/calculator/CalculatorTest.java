@@ -135,4 +135,13 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.resultOf("Divide 0"), 0.0);
     }
+
+    @Test
+    public void shouldReturnAValueZeroWhenTheCommandCancelIsIssued() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf("Add 100");
+
+        assertEquals(0.0, calculator.resultOf("Cancel"), 0.0);
+    }
 }
