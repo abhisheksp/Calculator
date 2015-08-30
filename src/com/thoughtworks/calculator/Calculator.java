@@ -13,7 +13,7 @@ public class Calculator {
             return memory;
         }
         else if (command.matches("^Subtract\\s\\d+(\\.\\d+)?")) {
-            memory = memory -(Double.parseDouble(command.split(" ")[1]));
+            memory = memory - (Double.parseDouble(command.split(" ")[1]));
             return memory;
         }
         else if (command.matches("^Multiply\\s\\d+(\\.\\d+)?")) {
@@ -29,7 +29,6 @@ public class Calculator {
             memory = 0.0;
             return memory;
         }
-
         else
         return memory;
     }
