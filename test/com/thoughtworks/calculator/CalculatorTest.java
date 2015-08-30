@@ -40,4 +40,11 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.resultOf("Multiply 5"), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenDivideCommandIsIssuedInitially() {
+        Calculator calculator = new Calculator();
+
+        assertEquals(0.0, calculator.resultOf("Divide 5 "), 0.0);
+    }
 }
