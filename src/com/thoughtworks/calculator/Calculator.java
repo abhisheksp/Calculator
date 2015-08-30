@@ -5,7 +5,8 @@ public class Calculator {
 
     public double resultOf(String command) {
         if (command.contains("Add") && command.length() > 3) {
-            return Double.parseDouble(command.split(" ")[1]);
+            memory = memory + Double.parseDouble(command.split(" ")[1]);
+            return memory;
         }
 
         else if (command.contains("Subtract")) {

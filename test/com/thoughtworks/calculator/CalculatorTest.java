@@ -83,4 +83,13 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.resultOf("Divide 5"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheSumOfTheNumberPassedWithTheAddCommandAndThePreviouslyComputedNumber() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf("Add 5");
+
+        assertEquals(10.0, calculator.resultOf("Add 5"), 0.0);
+    }
 }
