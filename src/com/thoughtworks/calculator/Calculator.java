@@ -3,6 +3,9 @@ package com.thoughtworks.calculator;
 public class Calculator {
 
     public double resultOf(String command) {
+        if (command.contains("Add") && command.length() > 3) {
+            return Double.parseDouble(command.split(" ")[1]);
+        }
         return 0.0;
     }
 }

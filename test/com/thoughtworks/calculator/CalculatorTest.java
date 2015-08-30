@@ -19,4 +19,11 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.resultOf("Add"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheNumberPassedWithTheAddCommandIssuedInitially() {
+        Calculator calculator = new Calculator();
+
+        assertEquals(5.0, calculator.resultOf("Add 5"), 0.0);
+    }
 }
