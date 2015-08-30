@@ -92,4 +92,13 @@ public class CalculatorTest {
 
         assertEquals(10.0, calculator.resultOf("Add 5"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheDiffernceOfTheNumberPassedWithTheSubtractCommandAndThePreviouslyComputedNumber() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf("Add 5");
+
+        assertEquals(2.0, calculator.resultOf("Subtract 3"), 0.0);
+    }
 }
