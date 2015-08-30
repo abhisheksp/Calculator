@@ -26,4 +26,11 @@ public class CalculatorTest {
 
         assertEquals(5.0, calculator.resultOf("Add 5"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheNegativeOfTheNumberPassedWithTheSubtractCommandIssedInitially() {
+        Calculator calculator = new Calculator();
+
+        assertEquals(-5.0, calculator.resultOf("Subtract 5"), 0.0);
+    }
 }

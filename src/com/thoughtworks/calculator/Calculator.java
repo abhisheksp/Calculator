@@ -6,6 +6,10 @@ public class Calculator {
         if (command.contains("Add") && command.length() > 3) {
             return Double.parseDouble(command.split(" ")[1]);
         }
+
+        else if (command.contains("Subtract")) {
+            return -(Double.parseDouble(command.split(" ")[1]));
+        }
         return 0.0;
     }
 }
