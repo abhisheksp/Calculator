@@ -94,7 +94,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldReturnTheDiffernceOfTheNumberPassedWithTheSubtractCommandAndThePreviouslyComputedNumber() {
+    public void shouldReturnTheDifferenceOfTheNumberPassedWithTheSubtractCommandAndThePreviouslyComputedNumber() {
         Calculator calculator = new Calculator();
 
         calculator.resultOf("Add 5");
@@ -118,5 +118,14 @@ public class CalculatorTest {
         calculator.resultOf("Add 10");
 
         assertEquals(5.0, calculator.resultOf("Divide 2"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheNumberInTheMemoryWhenAnInvalidCommandIsEntered() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf("Add 10");
+
+        assertEquals(10.0, calculator.resultOf("Add a"), 0.0);
     }
 }
