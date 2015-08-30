@@ -17,6 +17,11 @@ public class Calculator {
             memory = memory -(Double.parseDouble(command.split(" ")[1]));
             return memory;
         }
+
+        else if (command.contains("Multiply") && command.length() > 9) {
+            memory = memory * Double.parseDouble(command.split(" ")[1]);
+            return memory;
+        }
         return 0.0;
     }
 }

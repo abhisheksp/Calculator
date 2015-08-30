@@ -101,4 +101,13 @@ public class CalculatorTest {
 
         assertEquals(2.0, calculator.resultOf("Subtract 3"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheProductOfTheNumberPassedWithTheMultiplyCommandAndThePreviouslyComputedNumber() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf("Add 5");
+
+        assertEquals(15.0, calculator.resultOf("Multiply 3"), 0.0);
+    }
 }
