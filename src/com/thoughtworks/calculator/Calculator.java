@@ -1,6 +1,5 @@
 package com.thoughtworks.calculator;
-//calculator has a result on which calculations are performed, based on a input
-
+//calculator has a set of operations that it can perform on a number in its memory
 public class Calculator {
 
     public double resultOf(String command) {

@@ -10,6 +10,13 @@ public class CalculatorTest {
     public void shouldReturnZeroGivenAnInvalidCommandInitially() {
         Calculator calculator = new Calculator();
 
-        assertEquals(0.0, calculator.resultOf(""), 0.0);
+        assertEquals(0.0, calculator.resultOf(" "), 0.0);
+    }
+
+    @Test
+    public void shouldReturnZeroWhenGivenAnIncompleteCommandInitially() {
+        Calculator calculator = new Calculator();
+
+        assertEquals(0.0, calculator.resultOf("Add"), 0.0);
     }
 }
