@@ -24,10 +24,12 @@ public class Calculator {
         }
 
         else if (command.matches("^Divide\\s\\d+(\\.\\d+)?")) {
-            memory = memory / Double.parseDouble(command.split(" ")[1]);
+            if (Double.parseDouble(command.split(" ")[1]) != 0)
+                memory = memory / Double.parseDouble(command.split(" ")[1]);
             return memory;
         }
 
+        else
         return memory;
     }
 }

@@ -121,11 +121,18 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldReturnTheNumberInTheMemoryWhenAnInvalidCommandIsEntered() {
+    public void shouldReturnTheNumberInTheMemoryWhenTheCurrentCommandIsInvalid() {
         Calculator calculator = new Calculator();
 
         calculator.resultOf("Add 10");
 
         assertEquals(10.0, calculator.resultOf("Add a"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheNumberInTheMemoryWhenDivideByZeroCommandIsIssued() {
+        Calculator calculator = new Calculator();
+
+        assertEquals(0.0, calculator.resultOf("Divide 0"), 0.0);
     }
 }
