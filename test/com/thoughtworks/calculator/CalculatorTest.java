@@ -110,4 +110,13 @@ public class CalculatorTest {
 
         assertEquals(15.0, calculator.resultOf("Multiply 3"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheQuotientOfTheNumberPassedWithTheDivideCommandAndThePreviouslyComputedNumber() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf("Add 10");
+
+        assertEquals(5.0, calculator.resultOf("Divide 2"), 0.0);
+    }
 }

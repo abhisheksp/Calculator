@@ -8,20 +8,26 @@ public class Calculator {
     }
 
     public double resultOf(String command) {
-        if (command.contains("Add") && command.length() > 4) {
+        if (command.matches("^Add\\s\\d+(\\.\\d+)?")) {
             memory = memory + Double.parseDouble(command.split(" ")[1]);
             return memory;
         }
 
-        else if (command.contains("Subtract") && command.length() > 9) {
+        else if (command.matches("^Subtract\\s\\d+(\\.\\d+)?")) {
             memory = memory -(Double.parseDouble(command.split(" ")[1]));
             return memory;
         }
 
-        else if (command.contains("Multiply") && command.length() > 9) {
+        else if (command.matches("^Multiply\\s\\d+(\\.\\d+)?")) {
             memory = memory * Double.parseDouble(command.split(" ")[1]);
             return memory;
         }
-        return 0.0;
+
+        else if (command.matches("^Divide\\s\\d+(\\.\\d+)?")) {
+            memory = memory / Double.parseDouble(command.split(" ")[1]);
+            return memory;
+        }
+
+        return memory;
     }
 }
