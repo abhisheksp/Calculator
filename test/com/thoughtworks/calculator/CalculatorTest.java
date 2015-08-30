@@ -65,4 +65,13 @@ public class CalculatorTest {
 
         assertEquals(-5.0, calculator.resultOf("Subtract 5"), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenMultiplyCommandIsIssuedAfterAnInvalidCommandWasIssuedInitially() {
+        Calculator calculator = new Calculator();
+
+        calculator.resultOf(" ");
+
+        assertEquals(0.0, calculator.resultOf("Multiply 5"), 0.0);
+    }
 }
