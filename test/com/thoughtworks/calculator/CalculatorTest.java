@@ -105,14 +105,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void shouldReturnThePositveValueWhenTheAccumulatorIsNegative() {
+    public void shouldReturnThePositiveValueWhenTheAccumulatorIsNegative() {
         Calculator calculator = new Calculator(-10.0);
 
         assertEquals(10.0, calculator.absoluteOf(), 0.0);
     }
 
     @Test
-    public void shouldReturnThePositveValueWhenTheAccumulatorIsPostive() {
+    public void shouldReturnThePositiveValueWhenTheAccumulatorIsPostive() {
         Calculator calculator = new Calculator(10.0);
 
         assertEquals(10.0, calculator.absoluteOf(), 0.0);
