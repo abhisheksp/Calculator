@@ -26,4 +26,11 @@ public class CommandExecutorTest {
 
         assertEquals(-5.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheDifferenceOfAccumulatorAndtheNumberPassedWithTheSubtractCommand() {
+        CommandExecutor commandExecutor = new CommandExecutor("subtract", 5.0);
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(5.0)), 0.0);
+    }
 }
