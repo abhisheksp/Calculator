@@ -109,7 +109,7 @@ public class CalculatorTest {
     public void shouldReturnTheQuotientOfTheNumberPassedWithTheDivideCommandAndThePreviouslyComputedNumber() {
         Calculator calculator = new Calculator(10.0);
 
-        assertEquals(5.0, calculator.resultOf("Divide 2"), 0.0);
+        assertEquals(Double.NaN, calculator.resultOf("Divide 0"), 0.0);
     }
 
     @Test
@@ -117,13 +117,6 @@ public class CalculatorTest {
         Calculator calculator = new Calculator(10.0);
 
         assertEquals(10.0, calculator.resultOf("Add a"), 0.0);
-    }
-
-    @Test
-    public void shouldReturnTheNumberInTheMemoryWhenDivideByZeroCommandIsIssued() {
-        Calculator calculator = new Calculator(0.0);
-
-        assertEquals(0.0, calculator.resultOf("Divide 0"), 0.0);
     }
 
     @Test
