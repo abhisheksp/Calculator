@@ -89,4 +89,12 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.squareRoot(), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheSquareRootOfTheAccumulatorWhenTheSquareRootMethodIsCalled() {
+        Calculator calculator = new Calculator(100.0);
+
+        assertEquals(10.0, calculator.squareRoot(), 0.0);
+    }
+
 }
