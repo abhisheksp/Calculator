@@ -34,4 +34,10 @@ public class CalculatorTest {
         assertEquals(5.0, calculator.subtract(5.0), 0.0);
     }
 
+    @Test
+    public void shouldReturnZeroWhenMultiplyCommandIsIssuedInitially() {
+        Calculator calculator = new Calculator(0.0);
+
+        assertEquals(0.0, calculator.multiply(5.0), 0.0);
+    }
 }

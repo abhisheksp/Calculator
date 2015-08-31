@@ -16,4 +16,9 @@ public class Calculator {
         accumulator = accumulator - operand;
         return accumulator;
     }
+
+    public double multiply(double operand) {
+        accumulator = accumulator * operand;
+        return accumulator;
+    }
 }
