@@ -13,4 +13,10 @@ public class CalculatorTest {
         assertEquals(5.0, calculator.add(5.0), 0.0);
     }
 
+    @Test
+    public void shouldReturnTheSumOfTheNumberSuppliedWithTheAddCommandAndTheAccumulator() {
+        Calculator calculator = new Calculator(5.0);
+
+        assertEquals(10.0, calculator.add(5.0), 0.0);
+    }
 }
