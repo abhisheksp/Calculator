@@ -23,7 +23,11 @@ public class Calculator {
     }
 
     public double divide(double operand) {
-        accumulator = accumulator / operand;
-        return accumulator;
+        if(operand == 0)
+            return Double.NaN;
+        else {
+            accumulator = accumulator / operand;
+            return accumulator;
+        }
     }
 }
