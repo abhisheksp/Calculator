@@ -13,4 +13,10 @@ public class CommandExecutorTest {
         assertEquals(5.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
     }
 
+    @Test
+    public void shouldReturnTheSumeOfAccumulatorAndTheNumberPassedWithTheAddCommand() {
+        CommandExecutor commandExecutor = new CommandExecutor("add", 5.0);
+
+        assertEquals(10.0, commandExecutor.executes(new Calculator(5.0)), 0.0);
+    }
 }
