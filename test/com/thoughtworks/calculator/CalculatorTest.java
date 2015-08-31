@@ -54,4 +54,11 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.divide(2.0), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheQuotientOfTheNumberSuppliedWithTheDivideCommandAndTheAccumulator() {
+        Calculator calculator = new Calculator(10.0);
+
+        assertEquals(5.0, calculator.divide(2.0), 0.0);
+    }
 }
