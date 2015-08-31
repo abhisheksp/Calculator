@@ -61,4 +61,39 @@ public class CommandInterpreterTest {
 
         assertEquals(5.0, commandInterpreter.interpret("divide 2.0"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheSquareOfTheAccumulator() {
+        CommandInterpreter commandInterpreter = new CommandInterpreter(2.0);
+
+        assertEquals(4.0, commandInterpreter.interpret("sqr"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnZeroWhenSquareRootCommandIsIssuedInitially() {
+        CommandInterpreter commandInterpreter = new CommandInterpreter(0.0);
+
+        assertEquals(0.0, commandInterpreter.interpret("sqrt"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheSquareRootOfTheAccumulatorWhenTheSquareRootCommandIsCalled() {
+        CommandInterpreter commandInterpreter = new CommandInterpreter(4.0);
+
+        assertEquals(2.0, commandInterpreter.interpret("sqrt"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheNegativeOfTheAccumulatorWhenNegCommandIsIssued() {
+        CommandInterpreter commandInterpreter = new CommandInterpreter(2.0);
+
+        assertEquals(-2.0, commandInterpreter.interpret("neg"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnThePositiveValueWhenTheAccumulatorIsPositive() {
+        CommandInterpreter commandInterpreter = new CommandInterpreter(-2.0);
+
+        assertEquals(2.0, commandInterpreter.interpret("abs"), 0.0);
+    }
 }
