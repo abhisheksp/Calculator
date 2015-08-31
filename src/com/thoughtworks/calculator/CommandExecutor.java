@@ -17,6 +17,9 @@ public class CommandExecutor {
         if(operation.equals("add")) {
             return calculator.add(operand);
         }
+        else if (operation.equals("subtract")){
+            return calculator.subtract(operand);
+        }
         else
             return 0;
     }
