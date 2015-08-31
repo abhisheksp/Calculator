@@ -39,4 +39,8 @@ public class Calculator {
     public double squareRoot() {
         return Math.sqrt(accumulator);
     }
+
+    public double negativeOf() {
+        return -(accumulator);
+    }
 }
