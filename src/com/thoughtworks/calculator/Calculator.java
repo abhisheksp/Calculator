@@ -50,4 +50,8 @@ public class Calculator {
     public double absoluteOf() {
         return Math.abs(accumulator);
     }
+
+    public double accumulator() {
+        return accumulator;
+    }
 }

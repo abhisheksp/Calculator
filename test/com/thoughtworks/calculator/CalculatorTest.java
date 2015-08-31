@@ -124,4 +124,11 @@ public class CalculatorTest {
 
         assertEquals(Double.NaN, calculator.squareRoot(), 0.0);
     }
+
+    @Test
+    public void shouldReturnCurrentAccumulatorWhenAccumulatorIsCalled() {
+        Calculator calculator = new Calculator(-2.0);
+
+        assertEquals(-2.0, calculator.accumulator(), 0.0);
+    }
 }
