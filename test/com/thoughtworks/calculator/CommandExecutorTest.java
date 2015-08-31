@@ -33,4 +33,32 @@ public class CommandExecutorTest {
 
         assertEquals(0.0, commandExecutor.executes(new Calculator(5.0)), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenMultiplyCommandIsIssuedInitially() {
+        CommandExecutor commandExecutor = new CommandExecutor("multiply", 5.0);
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnZeroWhenDivideCommandIsIssuedInitially() {
+        CommandExecutor commandExecutor = new CommandExecutor("divide", 5.0);
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheProductOfTheNumberPassedWithTheMultiplyCommandAndThePreviouslyComputedNumber() {
+        CommandExecutor commandExecutor = new CommandExecutor("multiply", 5.0);
+
+        assertEquals(25.0, commandExecutor.executes(new Calculator(5.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheQuotientOfTheNumberPassedWithTheDivideCommandAndThePreviouslyComputedNumber() {
+        CommandExecutor commandExecutor = new CommandExecutor("divide", 5.0);
+
+        assertEquals(1.0, commandExecutor.executes(new Calculator(5.0)), 0.0);
+    }
 }

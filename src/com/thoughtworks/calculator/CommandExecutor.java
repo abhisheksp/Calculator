@@ -20,7 +20,12 @@ public class CommandExecutor {
         else if (operation.equals("subtract")){
             return calculator.subtract(operand);
         }
-        else
+        else if(operation.equals("multiply")) {
+            return calculator.multiply(operand);
+        }
+        else if (operation.equals("divide")) {
+            return calculator.divide(operand);
+        }
             return 0;
     }
 }
