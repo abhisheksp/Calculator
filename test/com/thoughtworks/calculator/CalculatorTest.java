@@ -103,4 +103,11 @@ public class CalculatorTest {
 
         assertEquals(10.0, calculator.negativeOf(), 0.0);
     }
+
+    @Test
+    public void shouldReturnThePositveValueWhenTheAccumulatorIsNegative() {
+        Calculator calculator = new Calculator(-10.0);
+
+        assertEquals(10.0, calculator.absoluteOf(), 0.0);
+    }
 }

@@ -43,4 +43,8 @@ public class Calculator {
     public double negativeOf() {
         return -(accumulator);
     }
+
+    public double absoluteOf() {
+        return Math.abs(accumulator);
+    }
 }
