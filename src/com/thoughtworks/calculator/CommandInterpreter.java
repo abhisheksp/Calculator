@@ -9,7 +9,7 @@ public class CommandInterpreter {
     }
 
     public double interpret(String rawInput) {
-        if (rawInput.matches("^(add)\\s\\d+(\\.\\d+)?")) {
+        if (rawInput.matches("^(add|subtract)\\s\\d+(\\.\\d+)?")) {
             commandExecutor = new CommandExecutor(rawInput.split(" ")[0], Double.parseDouble(rawInput.split(" ")[1]));
             return commandExecutor.executes(calculator);
         }
