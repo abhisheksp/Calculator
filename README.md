@@ -13,21 +13,21 @@ Given a line in Cartesian System, calculate its length. Given Two Lines check fo
 - ####For Mac OS X
     - #####if homebrew is installed
         - Open terminal
-        - Install ant by running the commands
+        - Install ant by running the Methods
 > brew update
 >
 > brew install ant
 
     - #####if homebrew is not installed
         - Open terminal
-        - Install homebrew by running the command
+        - Install homebrew by running the Method
         > ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        - Then install ant using the command
+        - Then install ant using the Method
         > brew install ant
 
 - ####For Linux OS
     - Open terminal
-    - Install ant by running the command
+    - Install ant by running the Method
     > sudo apt-get install ant
 
 - ####For Windows OS
@@ -37,5 +37,5 @@ Given a line in Cartesian System, calculate its length. Given Two Lines check fo
 ##Steps to Build:
 
 1. Set present working directory to Project directory.
-2. Run the following command
+2. Run the following Method
 > ant

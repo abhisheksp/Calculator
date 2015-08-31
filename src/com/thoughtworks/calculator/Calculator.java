@@ -30,4 +30,9 @@ public class Calculator {
             return accumulator;
         }
     }
+
+    public double square() {
+        accumulator = accumulator * accumulator;
+        return accumulator;
+    }
 }
