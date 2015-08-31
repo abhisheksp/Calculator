@@ -7,7 +7,7 @@ public class Calculator {
         this.accumulator = accumulator;
     }
 
-    public double add (double operand) {
+    public double add(double operand) {
         accumulator = accumulator + operand;
         return accumulator;
     }
@@ -23,7 +23,7 @@ public class Calculator {
     }
 
     public double divide(double operand) {
-        if(operand == 0)
+        if (operand == 0)
             return Double.NaN;
         else {
             accumulator = accumulator / operand;
@@ -34,5 +34,9 @@ public class Calculator {
     public double square() {
         accumulator = accumulator * accumulator;
         return accumulator;
+    }
+
+    public double squareRoot() {
+        return Math.sqrt(accumulator);
     }
 }

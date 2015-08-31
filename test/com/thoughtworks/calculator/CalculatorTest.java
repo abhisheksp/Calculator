@@ -83,5 +83,10 @@ public class CalculatorTest {
         assertEquals(100.0, calculator.square(), 0.0);
     }
 
+    @Test
+    public void shouldReturnZeroWhenSquareRootMethodIsCalledInitially() {
+        Calculator calculator = new Calculator(0.0);
 
+        assertEquals(0.0, calculator.squareRoot(), 0.0);
+    }
 }
