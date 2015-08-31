@@ -40,4 +40,11 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.multiply(5.0), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheProductOfTheNumberSuppliedWithTheMultiplyCommandAndTheAccumulator() {
+        Calculator calculator = new Calculator(5.0);
+
+        assertEquals(15.0, calculator.multiply(3.0), 0.0);
+    }
 }
