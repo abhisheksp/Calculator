@@ -3,8 +3,8 @@ package com.thoughtworks.calculator;
 public class Calculator {
     private double memory;
 
-    public Calculator() {
-        this.memory = 0.0;
+    public Calculator(double memory) {
+        this.memory = memory;
     }
 
     public double resultOf(String command) {
