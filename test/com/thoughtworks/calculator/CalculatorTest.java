@@ -26,4 +26,12 @@ public class CalculatorTest {
 
         assertEquals(-5.0, calculator.subtract(5.0), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheDifferenceOfTheNumberSuppliedWithTheSubtractCommandAndTheAccumulator() {
+        Calculator calculator = new Calculator(10.0);
+
+        assertEquals(5.0, calculator.subtract(5.0), 0.0);
+    }
+
 }
