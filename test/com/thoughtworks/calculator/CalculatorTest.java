@@ -47,4 +47,11 @@ public class CalculatorTest {
 
         assertEquals(15.0, calculator.multiply(3.0), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenDivideCommandIsIssuedInitially() {
+        Calculator calculator = new Calculator(0.0);
+
+        assertEquals(0.0, calculator.divide(2.0), 0.0);
+    }
 }

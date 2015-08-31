@@ -21,4 +21,9 @@ public class Calculator {
         accumulator = accumulator * operand;
         return accumulator;
     }
+
+    public double divide(double operand) {
+        accumulator = accumulator / operand;
+        return accumulator;
+    }
 }
