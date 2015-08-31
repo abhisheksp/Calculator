@@ -1,4 +1,5 @@
 package com.thoughtworks.calculator;
+
 //calculator has a set of operations that it can perform on a number in its accumulator
 public class Calculator {
     private double accumulator;
@@ -37,7 +38,7 @@ public class Calculator {
     }
 
     public double squareRoot() {
-        if(accumulator < 0)
+        if (accumulator < 0)
             return Double.NaN;
         else
             return Math.sqrt(accumulator);
