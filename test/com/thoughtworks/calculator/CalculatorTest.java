@@ -75,4 +75,13 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.square(), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheSquareOfTheAccumulatorWhenTheSquareMethodIsCalled() {
+        Calculator calculator = new Calculator(10.0);
+
+        assertEquals(100.0, calculator.square(), 0.0);
+    }
+
+
 }
