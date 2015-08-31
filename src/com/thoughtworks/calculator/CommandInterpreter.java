@@ -1,5 +1,5 @@
 package com.thoughtworks.calculator;
-
+//CommandInterpreter has a calculator and a commandExecutor, accepts command tokenizes it and converts it into concrete types
 public class CommandInterpreter {
     private Calculator calculator;
     private CommandExecutor commandExecutor;

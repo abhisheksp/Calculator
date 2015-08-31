@@ -1,7 +1,7 @@
 
 ##Description
 
-Given a line in Cartesian System, calculate its length. Given Two Lines check for their equality.
+Model A calculator which takes in add subtract multiply divide sqr sqrt neg and abs commands performs the appropriate arithmetic.
 
 ##Dependencies
 * JDK(1.6 or higher)

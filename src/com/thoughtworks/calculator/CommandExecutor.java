@@ -1,5 +1,5 @@
 package com.thoughtworks.calculator;
-
+//CommandExecutor accepts an operand and an operator maps and calls the appropriate calculator method
 public class CommandExecutor {
 
     private String operation;
