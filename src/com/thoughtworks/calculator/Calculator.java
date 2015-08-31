@@ -7,30 +7,8 @@ public class Calculator {
         this.accumulator = accumulator;
     }
 
-    public double resultOf(String command) {
-        if (command.matches("^Add\\s\\d+(\\.\\d+)?")) {
-            accumulator = accumulator + Double.parseDouble(command.split(" ")[1]);
-            return accumulator;
-        }
-        else if (command.matches("^Subtract\\s\\d+(\\.\\d+)?")) {
-            accumulator = accumulator - (Double.parseDouble(command.split(" ")[1]));
-            return accumulator;
-        }
-        else if (command.matches("^Multiply\\s\\d+(\\.\\d+)?")) {
-            accumulator = accumulator * Double.parseDouble(command.split(" ")[1]);
-            return accumulator;
-        }
-        else if (command.matches("^Divide\\s\\d+(\\.\\d+)?")) {
-            if (Double.parseDouble(command.split(" ")[1]) != 0)
-                accumulator = accumulator / Double.parseDouble(command.split(" ")[1]);
-            else accumulator = Double.NaN;
-            return accumulator;
-        }
-        else if (command.contains("Cancel")) {
-            accumulator = 0.0;
-            return accumulator;
-        }
-        else
+    public double add (double operand) {
+        accumulator = accumulator + operand;
         return accumulator;
     }
 }
