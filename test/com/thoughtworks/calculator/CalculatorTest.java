@@ -19,4 +19,11 @@ public class CalculatorTest {
 
         assertEquals(10.0, calculator.add(5.0), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheNegativeOfTheNumberSuppliedWithTheSubtractCommandInitially() {
+        Calculator calculator = new Calculator(0.0);
+
+        assertEquals(-5.0, calculator.subtract(5.0), 0.0);
+    }
 }
