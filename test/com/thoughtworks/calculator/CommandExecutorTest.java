@@ -61,4 +61,46 @@ public class CommandExecutorTest {
 
         assertEquals(1.0, commandExecutor.executes(new Calculator(5.0)), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenSquareCommandIssuedInitially() {
+        CommandExecutor commandExecutor = new CommandExecutor("sqr");
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheSquareOfTheAccumulator() {
+        CommandExecutor commandExecutor = new CommandExecutor("sqr");
+
+        assertEquals(4.0, commandExecutor.executes(new Calculator(2.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnZeroWhenSquareRootCommandIsIssuedInitially() {
+        CommandExecutor commandExecutor = new CommandExecutor("sqrt");
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheSquareRootOfTheAccumulatorWhenTheSquareRootCommandIsCalled() {
+        CommandExecutor commandExecutor = new CommandExecutor("sqrt");
+
+        assertEquals(2.0, commandExecutor.executes(new Calculator(4.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheNegativeOfTheAccumulatorWhenNegCommandIsIssued() {
+        CommandExecutor commandExecutor = new CommandExecutor("neg");
+
+        assertEquals(-2.0, commandExecutor.executes(new Calculator(2.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnThePositiveValueWhenTheAccumulatorIsPositive() {
+        CommandExecutor commandExecutor = new CommandExecutor("abs");
+
+        assertEquals(2.0, commandExecutor.executes(new Calculator(-2.0)), 0.0);
+    }
 }
