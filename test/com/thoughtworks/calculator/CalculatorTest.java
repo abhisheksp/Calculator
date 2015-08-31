@@ -117,4 +117,11 @@ public class CalculatorTest {
 
         assertEquals(10.0, calculator.absoluteOf(), 0.0);
     }
+
+    @Test
+    public void shouldReturnNaNWhenSquareRootCommandIsIssuedWhenAccumulatorIsNegative() {
+        Calculator calculator = new Calculator(-2.0);
+
+        assertEquals(Double.NaN, calculator.squareRoot(), 0.0);
+    }
 }

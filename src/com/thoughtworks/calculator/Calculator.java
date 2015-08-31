@@ -37,7 +37,10 @@ public class Calculator {
     }
 
     public double squareRoot() {
-        return Math.sqrt(accumulator);
+        if(accumulator < 0)
+            return Double.NaN;
+        else
+            return Math.sqrt(accumulator);
     }
 
     public double negativeOf() {

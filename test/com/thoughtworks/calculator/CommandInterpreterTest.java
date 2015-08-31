@@ -96,4 +96,11 @@ public class CommandInterpreterTest {
 
         assertEquals(2.0, commandInterpreter.interpret("abs"), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenACancelCommandIsIssued() {
+        CommandInterpreter commandInterpreter = new CommandInterpreter(0.0);
+
+        assertEquals(0.0, commandInterpreter.interpret("cancel"), 0.0);
+    }
 }

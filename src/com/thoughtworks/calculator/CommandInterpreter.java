@@ -17,6 +17,10 @@ public class CommandInterpreter {
             commandExecutor = new CommandExecutor(rawInput.split(" ")[0]);
             return commandExecutor.executes(calculator);
         }
+        else if (rawInput.matches("^cancel\\s*")){
+            calculator = new Calculator(0.0);
+            return 0.0;
+        }
         else
             return 0;
     }
