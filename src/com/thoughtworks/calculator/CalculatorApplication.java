@@ -1,5 +1,5 @@
 package com.thoughtworks.calculator;
-
+//Calculator to accept input
 import java.util.Scanner;
 
 public class CalculatorApplication {
@@ -21,88 +21,6 @@ public class CalculatorApplication {
         final Calculator calculator = new Calculator(0.0);
         CommandInterpreter commandInterpreter = new CommandInterpreter(calculator);
         CalculatorApplication calculatorApplication = new CalculatorApplication(commandInterpreter);
-
-        configure(calculator);
-
         calculatorApplication.runApplication();
-    }
-
-    private static void configure(final Calculator calculator) {
-        CommandExecutor.configuration.put("add", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.add(operand);
-            }
-        });
-
-        CommandExecutor.configuration.put("subtract", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.subtract(operand);
-            }
-        });
-
-        CommandExecutor.configuration.put("multiply", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.multiply(operand);
-            }
-        });
-
-        CommandExecutor.configuration.put("divide", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.divide(operand);
-            }
-        });
-
-        CommandExecutor.configuration.put("sqr", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.square();
-            }
-        });
-
-        CommandExecutor.configuration.put("sqrt", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.squareRoot();
-            }
-        });
-
-        CommandExecutor.configuration.put("cube", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.cube();
-            }
-        });
-
-        CommandExecutor.configuration.put("cubert", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.cubeRoot();
-            }
-        });
-
-        CommandExecutor.configuration.put("neg", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.negativeOf();
-            }
-        });
-
-        CommandExecutor.configuration.put("abs", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.absoluteOf();
-            }
-        });
-
-        CommandExecutor.configuration.put("cancel", new ArithmeticOperation() {
-            @Override
-            public double evaluate(double operand) {
-                return calculator.cancel();
-            }
-        });
     }
 }

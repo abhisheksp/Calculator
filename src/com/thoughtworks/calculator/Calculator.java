@@ -40,8 +40,10 @@ public class Calculator {
     public double squareRoot() {
         if (accumulator < 0)
             return Double.NaN;
-        else
-            return Math.sqrt(accumulator);
+        else {
+            accumulator = Math.sqrt(accumulator);
+            return accumulator;
+        }
     }
 
     public double negativeOf() {
