@@ -45,14 +45,21 @@ public class Calculator {
     }
 
     public double negativeOf() {
-        return -(accumulator);
+        accumulator = -(accumulator);
+        return accumulator;
     }
 
     public double absoluteOf() {
-        return Math.abs(accumulator);
+        accumulator =  Math.abs(accumulator);
+        return accumulator;
     }
 
     public double accumulator() {
+        return accumulator;
+    }
+
+    public double cancel() {
+        accumulator = 0.0;
         return accumulator;
     }
 }

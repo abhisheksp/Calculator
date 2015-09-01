@@ -31,7 +31,10 @@ public class CommandExecutor {
             return calculator.negativeOf();
         } else if (operation.equals("abs")) {
             return calculator.absoluteOf();
-        } else
+        } else if (operation.equals("cancel")){
+            return calculator.cancel();
+        }
+        else
             return 0;
     }
 }

@@ -4,8 +4,8 @@ public class CommandInterpreter {
     private Calculator calculator;
     private CommandExecutor commandExecutor;
 
-    public CommandInterpreter(double initialState) {
-        this.calculator = new Calculator(initialState);
+    public CommandInterpreter(Calculator calculator) {
+        this.calculator = calculator;
     }
 
     public double interpret(String rawInput) {
@@ -16,8 +16,8 @@ public class CommandInterpreter {
             commandExecutor = new CommandExecutor(rawInput.split(" ")[0]);
             return commandExecutor.executes(calculator);
         } else if (rawInput.matches("^cancel\\s*")) {
-            calculator = new Calculator(0.0);
-            return calculator.accumulator();
+            commandExecutor = new CommandExecutor(rawInput.split(" ")[0]);
+            return commandExecutor.executes(calculator);
         } else
             return calculator.accumulator();
     }
