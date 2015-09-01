@@ -101,5 +101,13 @@ public class CommandExecutor {
                 return calculator.cancel();
             }
         });
+
+        CommandExecutor.configuration.put("exit", new ArithmeticOperation() {
+            @Override
+            public double evaluate(double operand) {
+                System.exit(0);
+                return  0.0;
+            }
+        });
     }
 }
