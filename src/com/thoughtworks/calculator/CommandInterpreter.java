@@ -6,6 +6,7 @@ public class CommandInterpreter {
 
     public CommandInterpreter(Calculator calculator) {
         this.calculator = calculator;
+
     }
 
     public double interpret(String rawInput) {

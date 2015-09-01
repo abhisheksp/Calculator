@@ -1,10 +1,14 @@
 package com.thoughtworks.calculator;
+
+import java.util.HashMap;
+import java.util.Map;
+
 //CommandExecutor accepts an operand and an operator maps and calls the appropriate calculator method
 public class CommandExecutor {
 
     private String operation;
     private double operand;
-
+    public static Map<String, ArithmeticOperation> configuration = new HashMap<String, ArithmeticOperation>();
     public CommandExecutor(String operation, double operand) {
         this.operation = operation;
         this.operand = operand;
@@ -12,33 +16,10 @@ public class CommandExecutor {
 
     public CommandExecutor(String operation) {
         this.operation = operation;
+        this.operand = 0.0;
     }
 
     public double executes(Calculator calculator) {
-        if (operation.equals("add")) {
-            return calculator.add(operand);
-        } else if (operation.equals("subtract")) {
-            return calculator.subtract(operand);
-        } else if (operation.equals("multiply")) {
-            return calculator.multiply(operand);
-        } else if (operation.equals("divide")) {
-            return calculator.divide(operand);
-        } else if (operation.equals("sqr")) {
-            return calculator.square();
-        } else if (operation.equals("sqrt")) {
-            return calculator.squareRoot();
-        } else if (operation.equals("neg")) {
-            return calculator.negativeOf();
-        } else if (operation.equals("abs")) {
-            return calculator.absoluteOf();
-        } else if (operation.equals("cube")){
-            return calculator.cube();
-        } else if (operation.equals("cubert")){
-            return calculator.cubeRoot();
-        } else if (operation.equals("cancel")){
-            return calculator.cancel();
-        }
-        else
-            return 0;
+        return configuration.get(operation).evaluate(operand);
     }
 }
