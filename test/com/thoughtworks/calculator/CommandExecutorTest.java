@@ -103,4 +103,32 @@ public class CommandExecutorTest {
 
         assertEquals(2.0, commandExecutor.executes(new Calculator(-2.0)), 0.0);
     }
+
+    @Test
+    public void shouldReturnZeroWhenCubeCommandIssuedInitially() {
+        CommandExecutor commandExecutor = new CommandExecutor("cube");
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheCubeOfTheAccumulator() {
+        CommandExecutor commandExecutor = new CommandExecutor("cube");
+
+        assertEquals(8.0, commandExecutor.executes(new Calculator(2.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnZeroWhenCubeRootCommandIsIssuedInitially() {
+        CommandExecutor commandExecutor = new CommandExecutor("cubert");
+
+        assertEquals(0.0, commandExecutor.executes(new Calculator(0.0)), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheCubeRootOfTheAccumulatorWhenTheSquareRootCommandIsCalled() {
+        CommandExecutor commandExecutor = new CommandExecutor("cubert");
+
+        assertEquals(2.0, commandExecutor.executes(new Calculator(8.0)), 0.0);
+    }
 }

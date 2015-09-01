@@ -138,4 +138,18 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.cancel(), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheCubeOfTheAccumulator() {
+        Calculator calculator = new Calculator(2.0);
+
+        assertEquals(8.0, calculator.cube(), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheCubeRootOfTheAccumulator() {
+        Calculator calculator = new Calculator(8.0);
+
+        assertEquals(2.0, calculator.cubeRoot(), 0.0);
+    }
 }

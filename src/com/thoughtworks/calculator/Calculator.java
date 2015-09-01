@@ -54,12 +54,22 @@ public class Calculator {
         return accumulator;
     }
 
+    public double cube() {
+        accumulator = Math.pow(accumulator, 3);
+        return accumulator;
+    }
+
     public double accumulator() {
         return accumulator;
     }
 
     public double cancel() {
         accumulator = 0.0;
+        return accumulator;
+    }
+
+    public double cubeRoot() {
+        accumulator = Math.cbrt(accumulator);
         return accumulator;
     }
 }

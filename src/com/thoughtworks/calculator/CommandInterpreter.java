@@ -12,10 +12,7 @@ public class CommandInterpreter {
         if (rawInput.matches("^(add|subtract|multiply|divide)\\s\\d+(\\.\\d+)?")) {
             commandExecutor = new CommandExecutor(rawInput.split(" ")[0], Double.parseDouble(rawInput.split(" ")[1]));
             return commandExecutor.executes(calculator);
-        } else if (rawInput.matches("^(sqr|sqrt|neg|abs)\\s*")) {
-            commandExecutor = new CommandExecutor(rawInput.split(" ")[0]);
-            return commandExecutor.executes(calculator);
-        } else if (rawInput.matches("^cancel\\s*")) {
+        } else if (rawInput.matches("^(sqr|sqrt|neg|abs|cube|cubert|cancel)\\s*")) {
             commandExecutor = new CommandExecutor(rawInput.split(" ")[0]);
             return commandExecutor.executes(calculator);
         } else

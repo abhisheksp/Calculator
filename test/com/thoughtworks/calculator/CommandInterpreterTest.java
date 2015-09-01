@@ -117,4 +117,28 @@ public class CommandInterpreterTest {
 
         assertEquals(0.0, commandInterpreter.interpret("cancel"), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheCubeOfTheAccumulator() {
+        Calculator calculator = new Calculator(2.0);
+        CommandInterpreter commandInterpreter = new CommandInterpreter(calculator);
+
+        assertEquals(8.0, commandInterpreter.interpret("cube"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnZeroWhenCubeRootCommandIsIssuedInitially() {
+        Calculator calculator = new Calculator(0.0);
+        CommandInterpreter commandInterpreter = new CommandInterpreter(calculator);
+
+        assertEquals(0.0, commandInterpreter.interpret("cubert"), 0.0);
+    }
+
+    @Test
+    public void shouldReturnTheCubeRootOfTheAccumulatorWhenTheSquareRootCommandIsCalled() {
+        Calculator calculator = new Calculator(8.0);
+        CommandInterpreter commandInterpreter = new CommandInterpreter(calculator);
+
+        assertEquals(2.0, commandInterpreter.interpret("cubert"), 0.0);
+    }
 }
