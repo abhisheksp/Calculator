@@ -11,14 +11,14 @@ public class Parser {
 
     public Command parse(String rawInput) {
         String tokens [] = rawInput.split(" ");
-        if (rawInput.matches("^(add|subtract|multiply|divide)\\s\\d+(\\.\\d+)?")) {
+        if (rawInput.matches("^(add|subtract|multiply|divide)\\s\\d+(\\.\\d+)?\\s*$")) {
             command = new Command(tokens[0], Double.parseDouble(tokens[1]));
             return command;
-        } else if (rawInput.matches("^(sqr|sqrt|neg|abs|cube|cubert|cancel|exit)\\s*")) {
+        } else if (rawInput.matches("^(sqr|sqrt|neg|abs|cube|cubert|cancel|exit)\\s*$")) {
             command = new Command(tokens[0]);
             return command;
         } else {
-            command = new Command("Invalid");
+            command = new Command("invalid");
             return command;
         }
     }

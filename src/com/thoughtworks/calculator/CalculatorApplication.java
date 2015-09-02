@@ -11,21 +11,21 @@ public class CalculatorApplication {
         this.parser = parser;
     }
 
-    public void runApplication() {
+    public void runApplication(Calculator calculator) {
         String userInput;
         Command command;
         while(true){
             userInput = inputReader.readFromUser();
             command = parser.parse(userInput);
-            //System.out.println(parser.parse(userInput.toLowerCase().trim()));
+            System.out.println(command.executes(calculator));
         }
     }
-    public static void main(String [] args){
+    public static void main(String [] args) {
         Scanner scanner = new Scanner(System.in);
         InputReader inputReader = new InputReader(scanner);
         final Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
         CalculatorApplication calculatorApplication = new CalculatorApplication(parser, inputReader);
-        calculatorApplication.runApplication();
+        calculatorApplication.runApplication(calculator);
     }
 }
