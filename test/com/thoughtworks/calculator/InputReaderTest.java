@@ -9,10 +9,18 @@ import static org.junit.Assert.*;
 public class InputReaderTest {
 
     @Test
-    public void shouldReturnAStringWhenReadIsCalled(){
+    public void shouldReturnAStringWhenReadIsCalled() {
         Scanner scanner = new Scanner(System.in);
         InputReader inputReader = new InputReader(scanner);
 
         assertEquals("String".getClass(), inputReader.readFromUser().getClass());
+    }
+
+    @Test
+    public void shouldReturnFooStringWhenFooInputByTheUser() {
+        Scanner scanner = new Scanner(System.in);
+        InputReader inputReader = new InputReader(scanner);
+
+        assertEquals("Foo", inputReader.readFromUser());
     }
 }

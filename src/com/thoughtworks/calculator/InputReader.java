@@ -11,6 +11,6 @@ public class InputReader {
     }
 
     public String readFromUser(){
-        return "String";
+        return scanner.nextLine();
     }
 }
