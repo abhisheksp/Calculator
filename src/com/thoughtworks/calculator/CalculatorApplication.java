@@ -3,10 +3,10 @@ package com.thoughtworks.calculator;
 import java.util.Scanner;
 
 public class CalculatorApplication {
-    private CommandInterpreter commandInterpreter;
+    private Parser parser;
 
-    public CalculatorApplication(CommandInterpreter commandInterpreter) {
-        this.commandInterpreter = commandInterpreter;
+    public CalculatorApplication(Parser parser) {
+        this.parser = parser;
     }
 
     public void runApplication() {
@@ -14,13 +14,13 @@ public class CalculatorApplication {
         String userInput;
         while(true){
             userInput = scanner.nextLine();
-            System.out.println(commandInterpreter.interpret(userInput.toLowerCase().trim()));
+            System.out.println(parser.parse(userInput.toLowerCase().trim()));
         }
     }
     public static void main(String [] args){
         final Calculator calculator = new Calculator(0.0);
-        CommandInterpreter commandInterpreter = new CommandInterpreter(calculator);
-        CalculatorApplication calculatorApplication = new CalculatorApplication(commandInterpreter);
+        Parser parser = new Parser(calculator);
+        CalculatorApplication calculatorApplication = new CalculatorApplication(parser);
         calculatorApplication.runApplication();
     }
 }

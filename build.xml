@@ -20,8 +20,8 @@
     <pathelement location="out"/>
   </classpath>
     <test name="com.thoughtworks.calculator.CalculatorTest" todir="."/>
-    <test name="com.thoughtworks.calculator.CommandInterpreterTest" todir="."/>
-    <test name="com.thoughtworks.calculator.CommandExecutorTest" todir="."/>
+    <test name="com.thoughtworks.calculator.ParserTest" todir="."/>
+    <test name="com.thoughtworks.calculator.CommandTest" todir="."/>
 </junit>
 </target>
 </project>
