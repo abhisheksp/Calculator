@@ -24,6 +24,26 @@ public class Command {
         return configuration.get(operation).evaluate(operand);
     }
 
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) return true;
+        if (that == null || getClass() != that.getClass()) return false;
+        Command thatCommand = (Command) that;
+        if (Double.compare(thatCommand.operand, this.operand) != 0) return false;
+        return operation.equals(thatCommand.operation);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = operation.hashCode();
+        temp = Double.doubleToLongBits(operand);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
     public void configure(final Calculator calculator) {
         Command.configuration.put("add", new ArithmeticOperation() {
             @Override
@@ -107,6 +127,13 @@ public class Command {
             public double evaluate(double operand) {
                 System.exit(0);
                 return  0.0;
+            }
+        });
+
+        Command.configuration.put("invalid", new ArithmeticOperation() {
+            @Override
+            public double evaluate(double operand) {
+                return calculator.accumulator();
             }
         });
     }

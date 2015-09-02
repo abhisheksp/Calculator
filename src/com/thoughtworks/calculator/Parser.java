@@ -9,14 +9,17 @@ public class Parser {
 
     }
 
-    public double parse(String rawInput) {
+    public Command parse(String rawInput) {
+        String tokens [] = rawInput.split(" ");
         if (rawInput.matches("^(add|subtract|multiply|divide)\\s\\d+(\\.\\d+)?")) {
-            command = new Command(rawInput.split(" ")[0], Double.parseDouble(rawInput.split(" ")[1]));
-            return command.executes(calculator);
+            command = new Command(tokens[0], Double.parseDouble(tokens[1]));
+            return command;
         } else if (rawInput.matches("^(sqr|sqrt|neg|abs|cube|cubert|cancel|exit)\\s*")) {
-            command = new Command(rawInput.split(" ")[0]);
-            return command.executes(calculator);
-        } else
-            return calculator.accumulator();
+            command = new Command(tokens[0]);
+            return command;
+        } else {
+            command = new Command("Invalid");
+            return command;
+        }
     }
 }

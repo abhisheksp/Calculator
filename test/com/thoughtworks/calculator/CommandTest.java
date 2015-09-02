@@ -131,4 +131,32 @@ public class CommandTest {
 
         assertEquals(2.0, command.executes(new Calculator(8.0)), 0.0);
     }
+
+    @Test
+    public void shouldReturnTheValueOfTheAccumulatorForInvalidCommand() {
+        Command command = new Command("invalid");
+
+        assertEquals(10.0, command.executes(new Calculator(10.0)), 0.0);
+    }
+    @Test
+    public void isEqualToItself() {
+         Command command = new Command("add", 5.0);
+
+        assertEquals(command, command);
+    }
+
+    @Test
+    public void isNotEqualToSomethingThatIsNotAPoint() {
+        assertNotEquals(new Command("subtract", 6.0), "Not a Command");
+    }
+
+    @Test
+    public void isNotEqualToNull() {
+        assertNotEquals(new Command("subtract", 6.0), null);
+    }
+
+    @Test
+    public void hasSameHashCodeWhenPointsAreSame() {
+        assertEquals(new Command("subtract", 6.0).hashCode(), new Command("subtract", 6.0).hashCode());
+    }
 }

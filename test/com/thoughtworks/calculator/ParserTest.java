@@ -5,21 +5,21 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ParserTest {
-
     @Test
     public void shouldReturnTheNumberIssuedWithTheAddCommandInitially() {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(5.0, parser.parse("add 5.0"), 0.0);
+        assertEquals(new Command("add", 5.0), parser.parse("add 5.0"));
     }
+
 
     @Test
     public void shouldReturnTheSumOfAccumulatorAndTheNumberPassedWithTheAddCommand() {
         Calculator calculator = new Calculator(10.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(25.0, parser.parse("add 15.0"), 0.0);
+        assertEquals(new Command("add", 15.0), parser.parse("add 15.0"));
     }
 
     @Test
@@ -27,7 +27,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(-5.0, parser.parse("subtract 5.0"), 0.0);
+        assertEquals(new Command("subtract", 5.0), parser.parse("subtract 5.0"));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(10.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(5.0, parser.parse("subtract 5.0"), 0.0);
+        assertEquals(new Command("subtract", 5.0), parser.parse("subtract 5.0"));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(0.0, parser.parse("multiply 5.0"), 0.0);
+        assertEquals(new Command("multiply", 5.0), parser.parse("multiply 5.0"));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(10.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(50.0, parser.parse("multiply 5.0"), 0.0);
+        assertEquals(new Command("multiply", 5.0), parser.parse("multiply 5.0"));
     }
 
     @Test
@@ -59,7 +59,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(0.0, parser.parse("divide 5.0"), 0.0);
+        assertEquals(new Command("divide", 5.0), parser.parse("divide 5.0"));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(10.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(5.0, parser.parse("divide 2.0"), 0.0);
+        assertEquals(new Command("divide", 2.0), parser.parse("divide 2.0"));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(2.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(4.0, parser.parse("sqr"), 0.0);
+        assertEquals(new Command("sqr"), parser.parse("sqr"));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(0.0, parser.parse("sqrt"), 0.0);
+        assertEquals(new Command("sqrt"), parser.parse("sqrt"));
     }
 
     @Test
@@ -91,7 +91,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(4.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(2.0, parser.parse("sqrt"), 0.0);
+        assertEquals(new Command("sqrt"), parser.parse("sqrt"));
     }
 
     @Test
@@ -99,7 +99,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(2.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(-2.0, parser.parse("neg"), 0.0);
+        assertEquals(new Command("neg"), parser.parse("neg"));
     }
 
     @Test
@@ -107,7 +107,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(-2.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(2.0, parser.parse("abs"), 0.0);
+        assertEquals(new Command("abs"), parser.parse("abs"));
     }
 
     @Test
@@ -115,7 +115,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(0.0, parser.parse("cancel"), 0.0);
+        assertEquals(new Command("cancel"), parser.parse("cancel"));
     }
 
     @Test
@@ -123,7 +123,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(2.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(8.0, parser.parse("cube"), 0.0);
+        assertEquals(new Command("cube"), parser.parse("cube"));
     }
 
     @Test
@@ -131,7 +131,7 @@ public class ParserTest {
         Calculator calculator = new Calculator(0.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(0.0, parser.parse("cubert"), 0.0);
+        assertEquals(new Command("cubert"), parser.parse("cubert"));
     }
 
     @Test
@@ -139,6 +139,6 @@ public class ParserTest {
         Calculator calculator = new Calculator(8.0);
         Parser parser = new Parser(calculator);
 
-        assertEquals(2.0, parser.parse("cubert"), 0.0);
+        assertEquals(new Command("cubert"), parser.parse("cubert"));
     }
 }
