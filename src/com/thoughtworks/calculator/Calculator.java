@@ -5,7 +5,7 @@ public class Calculator {
     private double accumulator;
 
     public Calculator(double accumulator) {
-        this.accumulator = accumulator;
+        this.accumulator = accumulator; 
     }
 
     public double add(double operand) {
